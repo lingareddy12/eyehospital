@@ -352,6 +352,17 @@
 
     {% include "header.html" %}
 
+      <div id="include-header"></div>
+
+  <script>
+    fetch('/eyehospital/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-header').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
+
 <!-- Image Carousel Below Navbar -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
