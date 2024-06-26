@@ -178,7 +178,18 @@
     </style>
 </head>
 <body>
-    {% include "header.html" %}
+        {% include "header.html" %}
+
+      <div id="include-header"></div>
+
+  <script>
+    fetch('/eyehospital/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-header').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
 
 
 
@@ -190,7 +201,7 @@
     <div class="container col-xxl-8 px-1 py-3">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
           <div class="col-10 col-sm-8 col-lg-6">
-            <img src="/static/glaucoma.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            <img src="/eyehospital/glaucoma.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-6">
             <p class="lead">Glaucoma is the second leading cause of irreversible blindness worldwide. Glaucoma has been called the “silent thief of sight” as it has no apparent symptoms.
@@ -243,7 +254,7 @@
 </div>
 <div class="typescontainer"> 
     <div class="box">
-        <img src="static\openglaucoma.jpg" alt="Image 1">
+        <img src="eyehospital\openglaucoma.jpg" alt="Image 1">
         <div class="content">
             <h2>Primary Open-Angle Glaucoma</h2>
             <p>Primary Open-Angle Glaucoma (POAG) is the most common form of glaucoma, affecting about three million Americans. It happens when the eye’s drainage canals become clogged over time.
@@ -256,7 +267,7 @@
         <button class="btn">Learn More</button>
     </div>
     <div class="box">
-        <img src="static\angleglaucoma.jpg" alt="Image 2">
+        <img src="eyehospital\angleglaucoma.jpg" alt="Image 2">
         <div class="content"> 
             <h2>Angle-Closure Glaucoma</h2>
             <p>
