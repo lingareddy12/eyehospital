@@ -92,6 +92,44 @@
             color: #343a40;
             margin-bottom: 30px;
         }
+
+        
+.chart-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:center;
+    width: 100%;
+    backgroundColor:pink;
+    margin:60px 0px 60px 0px;
+}
+.chart-box {
+    width: 40%;
+}
+@media (max-width: 768px) {
+    .chart-container{
+        margin-top:20px;
+        display: flex;
+    flex-direction:column;
+    margin:40px 20px 20px 20px;
+    
+    }
+} 
+
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+
+    .row1{
+        display:flex;
+        flex-direction:column;
+       
+    }
+    .col {
+        padding:10px;
+    }
+}
         
         
         
@@ -197,7 +235,88 @@
         document.getElementById('include-data').innerHTML = data;
       })
       .catch(error => console.error('Error loading data.html:', error));
-  </script>
+  </script>  
+
+     <div class="chart-container">
+        <div class="chart-box">
+            <canvas id="singleBarChart"></canvas>
+        </div>
+        <div class="chart-box">
+            <canvas id="doubleBarChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const singleBarCtx = document.getElementById('singleBarChart').getContext('2d');
+        const doubleBarCtx = document.getElementById('doubleBarChart').getContext('2d');
+
+        const singleBarChart = new Chart(singleBarCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Cataract', 'Cornea', 'Retina', 'Orbit'],
+                datasets: [
+                    {
+                        label: 'Surgeries',
+                        data: [221,5,5,6],
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        const doubleBarChart = new Chart(doubleBarCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Cataract', 'Cornea', 'Retina', 'Orbit'],
+                datasets: [
+                    {
+                        label: 'Men',
+                        data: [88,2,3,0],
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Women',
+                        data: [133,3,2,6],
+                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
 
 
 <div class="containers">
