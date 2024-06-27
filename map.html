@@ -204,13 +204,13 @@
 
 
 
-      <div id="include-graph"></div>
+      <div id="graph"></div>
 
   <script>
     fetch('/eyehospital/graphs.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('include-graph').innerHTML = data;
+        document.getElementById('graph').innerHTML = data;
       })
       .catch(error => console.error('Error loading home.html:', error));
   </script>
