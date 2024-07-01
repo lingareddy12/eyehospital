@@ -397,6 +397,21 @@
              Simadri Misra Charitable Trust, our hospital embodies the vision of its benefactors to offer accessible, quality eye care to
               all segments of society.</div>
     </div>
+</div>
+
+      <div id="include-mission"></div>
+
+  <script>
+    fetch('/eyehospital/mission.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-mission').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
+
+    
+<div id="aboutus" class="aboutcontainer">
     <div class="bottom-row">
         <div class="small-div">
             <div>
