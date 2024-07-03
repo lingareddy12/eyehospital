@@ -232,6 +232,17 @@
     </div> 
 </div>  
 
+         <div id="include-timeline"></div>
+
+  <script>
+    fetch('/eyehospital/timeline.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-timeline').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading timeline.html:', error));
+  </script>
+
     <div id="include-data"></div>
 
   <script>
