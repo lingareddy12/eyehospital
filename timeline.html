@@ -35,9 +35,8 @@
 
         ul {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjusted columns for responsiveness */
+            grid-template-columns: 0.25rem 1fr;
             column-gap: 2rem;
-            row-gap: 4rem; /* Added row gap between items */
             list-style: none;
             width: min(60rem, 90%);
             margin: auto;
@@ -55,7 +54,16 @@
         ul li {
             display: grid;
             grid-template-rows: min-content min-content;
-            gap: 2rem; /* Adjusted gap between items */
+            margin: 2rem 1.5rem; /* Added margin */
+        }
+
+        ul li:nth-child(odd) {
+            grid-column: 2;
+        }
+
+        ul li:nth-child(even) {
+            grid-column: 1;
+            justify-self: end;
         }
 
         ul li .date {
@@ -72,6 +80,10 @@
             position: relative;
         }
 
+        ul li:nth-child(even) .date {
+            border-radius: 0 1.5rem 1.5rem 0;
+        }
+
         ul li .date::before {
             content: "";
             width: 1.5rem;
@@ -81,6 +93,12 @@
             position: absolute;
             top: 100%;
             clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+
+        ul li:nth-child(even) .date::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            right: auto;
+            left: 0;
         }
 
         ul li .date::after {
@@ -96,31 +114,46 @@
             right: calc(100% + 2rem + 0.125rem);
         }
 
+        ul li:nth-child(even) .date::after {
+            transform: translate(-50%, -50%);
+            left: calc(100% + 2rem + 0.125rem);
+        }
+
         ul li img {
             width: 100%;
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 10rem) {
             ul {
-                grid-template-columns: 1fr; /* Single column layout on smaller screens */
+                grid-template-columns: 1fr 0.25rem 1fr;
+            }
+            ul::before {
+                grid-column: 2;
+            }
+            ul li:nth-child(odd) {
+                grid-column: 3;
+            }
+            ul li:nth-child(even) {
+                grid-column: 1;
+            }
+            ul li .date {
+               
+                font-size: 8px;
             }
         }
 
-        .credits {
-            margin-top: 1rem;
-            text-align: right;
-        }
-        .credits a {
-            color: rgba(30, 30, 30);
-        }
+     
+
+      
     </style>
 </head>
 <body>
     <div class="timeline-container">
-        <h1>THE PROCESS OF TREATING CAMP PATIENTS</h1>
+        <h1>THE PROCESS THROUGH PHOTOGRAPHS</h1>
         <ul>
             <li style="--accent-color:#41516C">
                 <div class="date">1. Patients identified for surgery waiting to board the ambulance</div>
