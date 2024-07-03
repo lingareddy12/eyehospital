@@ -35,8 +35,8 @@
 
         ul {
             display: grid;
-            grid-template-columns: 1fr;
-            row-gap: 4rem; /* Added row gap */
+            grid-template-columns: 0.25rem 1fr;
+            column-gap: 2rem;
             list-style: none;
             width: min(60rem, 90%);
             margin: auto;
@@ -53,15 +53,17 @@
 
         ul li {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns per row */
             grid-template-rows: min-content min-content;
-            gap: 2rem; /* Adjusted gap between items */
-            margin-bottom: 4rem; /* Added margin bottom */
+            margin: 2rem 1.5rem; /* Added margin */
         }
 
-        ul li .timeline-item {
-            display: grid;
-            grid-template-rows: min-content min-content;
+        ul li:nth-child(odd) {
+            grid-column: 2;
+        }
+
+        ul li:nth-child(even) {
+            grid-column: 1;
+            justify-self: end;
         }
 
         ul li .date {
@@ -78,6 +80,10 @@
             position: relative;
         }
 
+        ul li:nth-child(even) .date {
+            border-radius: 0 1.5rem 1.5rem 0;
+        }
+
         ul li .date::before {
             content: "";
             width: 1.5rem;
@@ -87,6 +93,12 @@
             position: absolute;
             top: 100%;
             clip-path: polygon(0 0, 100% 0, 0 100%);
+        }
+
+        ul li:nth-child(even) .date::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            right: auto;
+            left: 0;
         }
 
         ul li .date::after {
@@ -102,6 +114,11 @@
             right: calc(100% + 2rem + 0.125rem);
         }
 
+        ul li:nth-child(even) .date::after {
+            transform: translate(-50%, -50%);
+            left: calc(100% + 2rem + 0.125rem);
+        }
+
         ul li img {
             width: 100%;
             max-width: 100%;
@@ -110,79 +127,62 @@
             margin: 0 auto;
         }
 
-        /* Adjustments for alternating positions */
-        ul li:nth-child(odd) {
-            grid-template-rows: min-content min-content;
-        }
-
-        ul li:nth-child(even) {
-            grid-template-rows: min-content min-content;
-            align-self: end;
-        }
-
-        @media (min-width: 40rem) {
-            ul li {
-                grid-template-columns: 1fr 1fr; /* Two columns per row */
+          @media (max-width: 768px) {
+            ul {
+                grid-template-columns: 1fr 0.25rem 1fr;
             }
-        }
-
-        @media (max-width: 40rem) {
-            ul li {
-                grid-template-columns: 1fr;
-                row-gap: 2rem;
+            ul::before {
+                grid-column: 2;
+            }
+            ul li:nth-child(odd) {
+                grid-column: 3;
             }
             ul li:nth-child(even) {
-                grid-row-start: span 2; /* Makes even items span two rows */
-            }
-        }
-
-        .credits {
-            margin-top: 1rem;
-            text-align: right;
-        }
-        .credits a {
-            color: rgba(30, 30, 30);
+                grid-column: 1;
+            } 
+            
+                  
         }
     </style>
 </head>
 <body>
     <div class="timeline-container">
-        <h1>THE PROCESS OF TREATING CAMP PATIENTS</h1>
+        <h1>THE PROCESS THROUGH PHOTOGRAPHS</h1>
         <ul>
-            <li style="--accent-color:#41516C" class="timeline-item">
+            <li style="--accent-color:#41516C">
                 <div class="date">1. Patients identified for surgery waiting to board the ambulance</div>
                 <img src="/eyehospital/t1.png" alt="Image 1">
             </li>
-            <li style="--accent-color:#FBCA3E" class="timeline-item">
+            <li style="--accent-color:#FBCA3E">
                 <div class="date">2. At the reception - waiting for registration</div>
                 <img src="/eyehospital/t2.png" alt="Image 2">
             </li>
-            <li style="--accent-color:#E24A68" class="timeline-item">
+            <li style="--accent-color:#E24A68">
                 <div class="date">3. Registration</div>
                 <img src="/eyehospital/t3.png" alt="Image 3">
             </li>
-            <li style="--accent-color:#1B5F8C" class="timeline-item">
+            <li style="--accent-color:#1B5F8C">
                 <div class="date">4. Taking photographs</div>
                 <img src="/eyehospital/t4.png" alt="Image 4">
             </li>
-            <li style="--accent-color:#4CADAD" class="timeline-item">
+            <li style="--accent-color:#4CADAD">
                 <div class="date">5. Waiting for surgery in the prep-room in block area of OT</div>
                 <img src="/eyehospital/t5.png" alt="Image 5">
             </li>
-            <li style="--accent-color:#41516C" class="timeline-item">
+            <li style="--accent-color:#41516C">
                 <div class="date">6. Their Smiles say it all!</div>
                 <img src="/eyehospital/t6.png" alt="Image 6">
             </li>
-            <li style="--accent-color:#FBCA3E" class="timeline-item">
+            <li style="--accent-color:#FBCA3E">
                 <div class="date">7. At the Ward after having surgery and dinner</div>
                 <img src="/eyehospital/t7.png" alt="Image 7">
             </li>
-            <li style="--accent-color:#E24A68" class="timeline-item">
+            <li style="--accent-color:#E24A68">
                 <div class="date">8. Time to leave</div>
                 <img src="/eyehospital/t8.png" alt="Image 8">
             </li>
         </ul>
-        <div class="credits"><a target="_blank" href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm">inspired by</a></div>
+       
     </div>
 </body>
 </html>
