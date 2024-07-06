@@ -1,0 +1,224 @@
+
+   
+    <style>
+        .container {
+            max-width: 100%;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px; 
+            justify-content:center;
+            align-items:center;
+            background-color:pink;
+        }
+
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .justify-content-center {
+            justify-content: center;
+        }
+
+        .text-primary {
+            color: #007bff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .fas.fa-heart {
+            font-size: 24px;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .head {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .owl-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+        }
+
+        .owl-item {
+            flex: 0 0 auto;
+            width: 300px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .active-star {
+            color: #ffc107;
+        }
+
+        .far.fa-star {
+            color: #ddd;
+        }
+
+        .main {
+            font-size: 20px;
+        }
+
+        .profile {
+            align-items: center;
+        }
+
+        .profile img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .designation {
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .owl-carousel {
+                justify-content: center;
+            }
+
+            .owl-item {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+
+    </style>
+
+    <div class="container rounded">
+        <div class="d-flex justify-content-center fas fa-heart"></div>
+        <p class="tag">Our Patients love</p>
+        <h1 class="text-primary text-center head">What we do</h1>
+        <div class="owl-carousel owl-theme">
+            <div class="owl-item">
+                <div class="card d-flex flex-column">
+                    <div class="mt-2">
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="far fa-star"></span>
+                    </div>
+                    <div class="main font-weight-bold pb-2 pt-1">Excellent Doctors</div>
+                    <div class="d-flex flex-row profile pt-4 mt-auto">
+                        <img src="https://via.placeholder.com/150" alt="" class="rounded-circle">
+                        <div class="d-flex flex-column pl-2">
+                            <div class="name">Parthiv</div>
+                            <p class="text-muted designation">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card d-flex flex-column">
+                    <div class="mt-2">
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                    </div>
+                    <div class="main font-weight-bold pb-2 pt-1">Highly recommended!</div>
+                    <div class="d-flex flex-row profile pt-4 mt-auto">
+                        <img src="https://via.placeholder.com/150" alt="" class="rounded-circle">
+                        <div class="d-flex flex-column pl-2">
+                            <div class="name">Linga Reddy</div>
+                            <p class="text-muted designation">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card d-flex flex-column">
+                    <div class="mt-2">
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="far fa-star"></span>
+                    </div>
+                    <div class="main font-weight-bold pb-2 pt-1">Great experience!</div>
+                    <div class="d-flex flex-row profile pt-4 mt-auto">
+                        <img src="https://via.placeholder.com/150" alt="" class="rounded-circle">
+                        <div class="d-flex flex-column pl-2">
+                            <div class="name">Nithin Sai Raj</div>
+                            <p class="text-muted designation">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card d-flex flex-column">
+                    <div class="mt-2">
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="far fa-star"></span>
+                    </div>
+                    <div class="main font-weight-bold pb-2 pt-1">Canteen food is superb</div>
+                    <div class="d-flex flex-row profile pt-4 mt-auto">
+                        <img src="https://via.placeholder.com/150" alt="" class="rounded-circle">
+                        <div class="d-flex flex-column pl-2">
+                            <div class="name">Pajana</div>
+                            <p class="text-muted designation">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-item">
+                <div class="card d-flex flex-column">
+                    <div class="mt-2">
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="fas fa-star active-star"></span>
+                        <span class="far fa-star"></span>
+                        <span class="far fa-star"></span>
+                    </div>
+                    <div class="main font-weight-bold pb-2 pt-1">Staff are supportive</div>
+                    <div class="d-flex flex-row profile pt-4 mt-auto">
+                        <img src="https://via.placeholder.com/150" alt="" class="rounded-circle">
+                        <div class="d-flex flex-column pl-2">
+                            <div class="name">Uday Teja</div>
+                            <p class="text-muted designation">Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const box = this.parentElement;
+            box.classList.toggle('show');
+        });
+    });
+</script>
+
