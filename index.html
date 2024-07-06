@@ -437,12 +437,20 @@
 <body>    
 
 
-    {% include "header.html" %}
+       <div id="include-header"></div>
 
+  <script>
+    fetch('/eyehospital/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-header').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
   
 
     <div class="welcome-section">
-        <img src="/static/homepage.jpg" alt="Background Image" class="background-image"> <!-- Replace with your image URL -->
+        <img src="/eyehospital/homepage.jpg" alt="Background Image" class="background-image"> <!-- Replace with your image URL -->
         
     </div>
 
@@ -456,22 +464,22 @@
     <div class="services-container">
 
         <div class="service-card">
-            <img src="/static/glasses.jpeg" alt="Service 2">
+            <img src="/eyehospital/glasses.jpeg" alt="Service 2">
             <h3>OPTICALS</h3>
             <p>We offer a wide range of stylish and functional prescription glasses. Our experienced staff will help you choose the perfect frames and lenses to match your lifestyle and vision needs, ensuring comfort and clarity.</p>
         </div>
         <div class="service-card">
-            <img src="/static/cataract.jpeg" alt="Service 1">
+            <img src="/eyehospital/cataract.jpeg" alt="Service 1">
             <h3>CATARACT</h3>
             <p>We offer surgical correction of cataracts through clear corneal phacoemulsification, including micro-incision cataract surgery (MICS) and intraocular lens implantation. Our options for intraocular lenses include foldable, UV-protective, multifocal, and toric lenses.</p>
         </div>
         <div class="service-card">
-            <img src="/static/glaucoma.jpeg" alt="Service 3">
+            <img src="/eyehospital/glaucoma.jpeg" alt="Service 3">
             <h3>GLAUCOMA</h3>
             <p>We offer comprehensive glaucoma management, including advanced diagnostics, medical therapy, laser treatments, and surgical interventions such as trabeculectomy and drainage implant surgery. Our personalized care and state-of-the-art techniques aim to preserve your vision and maintain your quality of life.</p>
         </div>
         <div class="service-card">
-            <img src="/static/cornea.jpeg" alt="Service 1">
+            <img src="/eyehospital/cornea.jpeg" alt="Service 1">
             <h3>CORNEA</h3>
             <p>We provide comprehensive corneal care, including advanced diagnostics, medical treatments, and surgical procedures. Our services include corneal transplants, treatment for keratoconus, and management of corneal infections and dystrophies. We are committed to preserving your vision with personalized care and the latest medical techniques.</p>
         </div>
@@ -479,13 +487,31 @@
     </div>
 </div> 
 
-{% include 'slider.html'%}
+   <div id="include-slider"></div>
+
+  <script>
+    fetch('/eyehospital/slider.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-slider').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
 
 
 
 
 
-{% include 'reviews.html'%}
+   <div id="include-reviews"></div>
+
+  <script>
+    fetch('/eyehospital/reviews.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('include-reviews').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading home.html:', error));
+  </script>
 
 
 
